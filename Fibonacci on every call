@@ -1,0 +1,26 @@
+function createFibonacciGenerator(){
+    let previous = 0;
+    let current =1;
+    
+    return function(){
+        const result = previous;
+        const next = previous + current;
+        
+        previous = current;
+        current = next;
+        
+        return result;
+    }
+}
+
+
+
+let fibonacciGenerator = createFibonacciGenerator()
+console.log(fibonacciGenerator()) // should print 0
+console.log(fibonacciGenerator()) // should print 1
+console.log(fibonacciGenerator()) // should print 1
+console.log(fibonacciGenerator()) // should print 2
+console.log(fibonacciGenerator()) // should print 3
+console.log(fibonacciGenerator()) // should print 5
+console.log(fibonacciGenerator()) // should print 8
+console.log(fibonacciGenerator())
