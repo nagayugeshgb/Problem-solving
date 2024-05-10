@@ -1,0 +1,87 @@
+function evenlyDivides(N){
+    let count =0;
+    while(Math.floor(N)>0){
+        count = count + 1;
+        N = N/10; 
+    }
+    document.write(count);
+}
+
+function reverseNumber(N){
+    let revNum =0;
+    while(Math.floor(N)>0){
+        let LastNum = parseInt(N % 10);
+        N = N/10; 
+        revNum = (revNum*10) + LastNum;
+    }
+    document.write(revNum);
+}
+
+function checkPalidrome(N){
+    let revNum =0;
+    let dup = N;
+    while(Math.floor(N)>0){
+        let LastNum = parseInt(N % 10);
+        N = N/10; 
+        revNum = (revNum*10) + LastNum;
+    }
+
+    if(revNum === dup) document.write("true")
+    else document.write("false");
+}
+
+function ArmstrongNumber(N){
+    let dup =N;
+    let sum = 0;
+    while(parseInt(N)>0){
+        let LastNum = parseInt(N % 10);
+        sum = sum + (LastNum * LastNum * LastNum);
+        N = N/10; 
+    }
+
+    if(sum === dup) document.write("true")
+    else document.write("false");
+}
+
+
+//divisors
+//O(n)
+
+function printAlldivisors(n){
+    for(i=1; i<=n;i++){
+        if(n%i == 0){
+            document.write(`${i}&nbsp`);
+        }
+    }
+}
+
+//Olog2(n)
+
+function printAlldivisors(n){
+    for(i=1; i*i<=36;i++){
+        if(n%i == 0){
+            document.write(`${i}&nbsp`);
+            if(n/i != i){
+                document.write(`${n/i}&nbsp`);
+            }
+        }
+    }
+}
+
+function primeNumber(n){
+    let count = 0;
+    for(i=1; i*i<=36;i++){
+        if(n%i == 0){
+            count++;
+            if(n/i != i){
+                count++
+            }
+        }
+    }
+    if(count > 2){
+        document.write("false");
+    }else{
+        document.write("true");
+    }
+    
+}
