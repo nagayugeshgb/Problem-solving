@@ -44,3 +44,153 @@ function pattern5(n) {
 }
 
 pattern5(5);
+
+function pattern6(n) {
+    for (i = 1; i <= n; i++) {
+      for (j = 1; j <= n-i+1; j++) {
+        document.write(j);
+      }
+      document.write('</br>');
+    }
+  }
+
+
+function pattern7(n) {
+for (i = 1; i <= n; i++) {
+    for (j = 1; j <= n-i+1; j++) {
+    document.write(j);
+    }
+    document.write('</br>');
+}
+}
+
+function pattern7(n) {
+    for (i = 0; i < n; i++) {
+        for (j = 1; j <= n-i-1; j++) {
+        document.write("&nbsp");
+        }
+        for (j = 1; j <= 2*i+1; j++) {
+            document.write("*");
+            }
+        for (j = 1; j <= n-i-1; j++) {
+            document.write(" ");
+            }
+        document.write('</br>');
+    }
+    }
+
+
+function pattern8(n) {
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < i; j++) {
+        document.write("&nbsp");
+        }
+        for (j = 1; j <= 2*n-1 - 2*i; j++) {
+            document.write("*");
+            }
+        for (j = 1; j < i; j++) {
+            document.write(" ");
+            }
+        document.write('</br>');
+    }
+    }
+
+
+function pattern9(n){
+    pattern7(n);
+    pattern8(n);
+}
+
+
+
+function pattern10(n){
+    for(i=1; i<=n*2; i++){
+        let stars = i;
+        if(i > n) stars = 2*n - i;
+       for(j=1;j<=stars; j++){
+        document.write("*")
+       }
+       document.write('</br>')
+    }
+}
+
+//pattern11
+
+// 0
+// 10
+// 010
+// 1010
+// 01010
+
+function pattern11(n){
+    for(i=1; i<=n; i++){
+        let start;
+        if(i%2 == 0) start = 1;
+        else start = 0;
+       for(j=1;j<=i; j++){
+        document.write(start);
+        start = 1-start;
+       }
+       document.write('</br>')
+    }
+}
+
+//pattern12
+// 1      1  [1,6,1]  10 - 2(i)
+// 12    21  [2,4,2]  10 - 2(i)
+// 123  321  [3,2,3]  
+// 12344321  [4,0,4]
+
+function pattern12(n){
+    for(i=1;i<=n;i++){
+        for(j=1;j<=i;j++){
+            document.write(j)
+        }
+        for(j=1;j<=2*(n-i);j++){
+            document.write(`&nbsp&nbsp`);
+        }
+
+        for(j=i;j>=1;j--){
+            document.write(j)
+        }
+
+        document.write('</br>')
+    }
+}
+
+//pattern13
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+function pattern13(n){
+    let num =1
+    for(i=1;i<=n;i++){
+        for(j=1;j<=i;j++){
+            document.write(`${num}&nbsp`);
+            num +=1
+        }
+        document.write("</br>")
+    }
+}
+
+//pattern14
+// A
+// A B
+// A B C
+// A B C D 
+// A B C D E
+
+
+function pattern14(n){
+    let CHAR =['A', 'B', 'C', 'D', 'E'];
+    for(i=1;i<=n;i++){
+        for(let j='A';j <= 'A' +1 ; j++){
+            // document.write(`${CHAR[j]}&nbsp`);
+            document.write(`${j}&nbsp`);
+        }
+        document.write("</br>")
+    }
+}
