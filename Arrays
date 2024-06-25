@@ -33,4 +33,16 @@ function print2largest(arr,n){
     
     print2largest([12, 35, 1, 10, 34, 1], 6)
 
-3.
+3. check if the array is sorted
+
+function sorted(arr) {
+    for(i=1; i< arr.length; i++){
+        if(arr[i] < arr[i-1]){
+            return false;
+        }
+    }
+};
+
+sorted([3,4,5,1,2])
+
+4.
