@@ -81,3 +81,23 @@ rotateArrayByOne(nums) {
         // Place the first element at the end
         nums[nums.length - 1] = temp;
     }
+
+6. Rotate an array by k elements
+
+function rotateArray(nums, k) {
+    let n = nums.length;
+    k = k % n;
+    let temp = nums.slice(0,k);
+        for(let i=k; i<nums.length; i++) {
+            nums[i-k] = nums[i]
+        }
+        for (let i=n-k; i<n;i++){
+            nums[i]= temp[i - (n-k)]
+        }
+
+        console.log(nums, "nums" ,9%6)
+}
+
+rotateArray([1, 2, 3, 4, 5, 6], 9);
+
+7.
