@@ -1,0 +1,34 @@
+1.Longest common prefix
+
+
+    function longestCommonPrefix(strs) {
+        
+        if (strs.length === 0) return "";
+        strs.sort();
+        console.log(strs)
+        const first = strs[0];
+        const last = strs[strs.length - 1];
+
+        let commonPrefix = "";
+
+        for (let i = 0; i < Math.min(first.length, last.length); i++) {
+            // Stop if characters differ
+            if (first[i] !== last[i]) {
+                console.log(commonPrefix);
+                return commonPrefix;
+            }
+            // Add matching character to result
+            commonPrefix += first[i];
+        }
+        console.log(commonPrefix);
+        return commonPrefix;
+    }
+
+
+// Input array of strings
+const inputStrs = ["interview", "qwternet", "internal", "interval"];
+const data = longestCommonPrefix(inputStrs);
+
+console.log(data, 'data');
+
+2.
